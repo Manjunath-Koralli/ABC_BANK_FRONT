@@ -51,28 +51,28 @@
     <label for="id" style="color:black;font-weight: bold;font-family: Times New Roman;">ID</label>
     <input type="text" class="form-control" id="id"
            required
-           [(ngModel)]="model.emp_no" name="id">
+           [(ngModel)]="model.empId" name="id" [readonly]="true">
   </div>
    <div class="form-group">
-    <label for="name"style="color:black;font-weight: bold;font-family: Times New Roman;">Name</label>
+    <label for="name" style="color:black;font-weight: bold;font-family: Times New Roman;">Name</label>
     <input type="text" class="form-control" id="name"
            required
            [(ngModel)]="model.name" name="name">
   </div>
 
   <div class="form-group">
-    <label for="dob"style="color:black;font-weight: bold;font-family: Times New Roman;">Date of Birth</label>
+    <label for="dob" style="color:black;font-weight: bold;font-family: Times New Roman;">Date of Birth</label>
     <input type="text"  class="form-control" id="dob" required
            [(ngModel)]="model.dob" name="dob">
   </div>
   <div class="form-group">
-   <label for="phno"style="color:black;font-weight: bold;font-family: Times New Roman;">Contact Number</label>
+   <label for="phno" style="color:black;font-weight: bold;font-family: Times New Roman;">Contact Number</label>
     <input type="number" class="form-control" id="phno"
            required
-           [(ngModel)]="model.phno" name="phno">
+           [(ngModel)]="model.contact" name="phno">
   </div>
   <div class="form-group">
-   <label for="username"style="color:black;font-weight: bold;font-family: Times New Roman;">Username</label>
+   <label for="username" style="color:black;font-weight: bold;font-family: Times New Roman;">Username</label>
     <input type="text" class="form-control" id="username"
            required
            [(ngModel)]="model.username" name="username">
@@ -81,13 +81,14 @@
    <label for="password"style="color:black;font-weight: bold;font-family: Times New Roman;">Password</label>
     <input type="text" class="form-control" id="password"
            required
-           [(ngModel)]="model.password" name="password">
+           [(ngModel)]="model.pwd" name="password">
   </div>
   <div class="form-group">
-   <label for="role"style="color:black;font-weight: bold;font-family: Times New Roman;">Role</label>
+   <label for="role"style="color:black;font-weight: bold;font-family: Times New Roman;">Role
+   </label>
     <input type="text" class="form-control" id="role"
            required
-           [(ngModel)]="model.emp_role" name="role">
+           [(ngModel)]="model.role" name="role" [readonly]="true">
   </div>
 
   <br><br>

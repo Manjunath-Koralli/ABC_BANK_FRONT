@@ -41,15 +41,15 @@ export class RegisterComponent implements OnInit {
 	save() {
 		this.name = this.model.name;
 		this.dob = this.model.dob;
-		this.phno = this.model.phno;
+		this.phno = this.model.contact;
 		this.username = this.model.username;
-		this.password = this.model.password;
-		this.role = this.model.emp_role;
+		this.password = this.model.pwd;
+		this.role = this.model.role;
 		this.employee = new Employee(this.name,this.dob,this.phno,this.username,this.password,this.role);
 		this.regService.createEmployee(this.employee)
       		.subscribe(data => console.log(data), error => console.log(error));
       	 
-      	 this.router.navigate(['listadmin']);
+      	 //this.router.navigate(['listadmin']);
 	}
 
 	home3(){

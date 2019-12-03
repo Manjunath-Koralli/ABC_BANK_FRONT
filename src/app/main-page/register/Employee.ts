@@ -1,12 +1,12 @@
 export class Employee{
 	
-	public emp_no:number;
+	public empId:number;
 	public name:string;
 	public dob: string;
-	public phno: number;
+	public contact: number;
 	public username: string;
-	public password: string;
-	public emp_role:string;
+	public pwd: string;
+	public role:string;
 
 	
 	
@@ -15,9 +15,9 @@ export class Employee{
 	{	
 		this.name=name;
 		this.dob=dob;
-		this.phno=phno;
+		this.contact=phno;
 		this.username=username;
-		this.password=password;
-		this.emp_role=role;
+		this.pwd=password;
+		this.role=role;
 	}
 }

@@ -1,0 +1,78 @@
+<body style="background: #e0ffff">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#"><img src="assets/image/logo.png" style="height:50px;"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <h1></h1>
+    </div>
+  </div>
+  </nav>
+
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #43C6DB; padding-left:1267px;height: 82px;">
+  <a href="" (click)="home3()" class="btn btn-dark"  style="background: #43C6DB;color:black;font-weight: bold;">Home</a> &nbsp;
+  <div style="padding-left:20px"></div>
+
+  </nav>
+
+  <br>
+<div class="container">
+  <form ngForm>
+
+  	<div class="form-group">
+    <label for="name"style="color:black;font-weight: bold;font-family: Times New Roman;">Name</label>
+    <input type="text" class="form-control" id="name"
+           required
+           [(ngModel)]="model.name" name="name">
+  </div>
+
+  <div class="form-group">
+    <label for="dob" style="color:black;font-weight: bold;font-family: Times New Roman;">Date of Birth</label>
+    <input type="date"  class="form-control" id="dob" required
+           [(ngModel)]="model.dob" name="dob">
+  </div>
+  <div class="form-group">
+   <label for="phno"style="color:black;font-weight: bold;font-family: Times New Roman;">Contact Number</label>
+    <input type="number" class="form-control" id="phno"
+           required
+           [(ngModel)]="model.phno" name="phno">
+  </div>
+  <div class="form-group">
+   <label for="username"style="color:black;font-weight: bold;font-family: Times New Roman;">Username</label>
+    <input type="text" class="form-control" id="username"
+           required
+           [(ngModel)]="model.username" name="username">
+  </div>
+  <div class="form-group">
+   <label for="password"style="color:black;font-weight: bold;font-family: Times New Roman;">Password</label>
+    <input type="text" class="form-control" id="password"
+           required
+           [(ngModel)]="model.password" name="password">
+  </div>
+  <div class="form-group">
+   <label for="role"style="color:black;font-weight: bold;font-family: Times New Roman;">Role</label>
+    <input type="text" class="form-control" id="role"
+           required
+           [(ngModel)]="model.emp_role" name="role">
+  </div>
+
+   
+<br>
+
+   <button type="submit" class="btn btn-info" (click)="createCustomer()" style="color:black;font-weight: bold;font-family: Times New Roman;">Submit</button>&nbsp;
+
+
+  </form>
+</div>
+<br>
+<br><br>
+
+
+
+
+
+
+
+</body>

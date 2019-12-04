@@ -31,71 +31,42 @@
  
   <div class="row">
 
-<div class="col-md-3">
+<div class="col-md-3" *ngFor = 'let suser of getData'>
   
       <div class="row no-gutters" style="padding-left: 50px;background: #e0ffff;">
-      <img src="assets\image\ceo.jpg" class="card-img" alt="..." style="height: 400px;">
-    
-
-  
-      
-      
-        <h5 class="card-title "style="color:black; font-weight: bold; font-size: 28px" >ANDREW MACKENZI</h5>
-        
-     
-
-    </div>
+        <!--<img src="assets\image\ceo.jpg" class="card-img" alt="..." style="height: 400px;">-->
+        <h5 class="card-title "style="color:black; font-weight: bold; font-size: 28px" >{{ suser.name }}</h5>
+      </div>
 </div>
      
   
 
-  <div class="col-sm-4">
+  <div class="col-sm-8" >
     <div class="card" padding>
       <div class="row no-gutters">
-<div class="card" style="width: 32rem; height: 33rem">
-  <div class="card-header" style="font-weight: bold; font-size: 28px;">
-    Basic Information
+        <div class="card" style="width: 62rem; height: 33rem">
+          <div class="card-header" style="font-weight: bold; font-size: 28px;">
+            Basic Information
+          </div>
+          <ul class="list-group list-group-flush" *ngFor = 'let suser of getData'>
+            <li class="list-group-item" style="height: 4rem">Employee ID      :  {{ suser.empId }}</li>
+            <li class="list-group-item" style="height: 4rem">Name     : {{ suser.name }} </li>
+            <li class="list-group-item" style="height: 4rem">Date of Birth     :  {{ suser.dob }} </li>
+            
+            <li class="list-group-item" style="height: 4rem">Phone No.     : {{ suser.contact }} </li>
+            <li class="list-group-item" style="height: 4rem">Username      : {{ suser.username }}</li>
+            <li class="list-group-item" style="height: 4rem">Password      : *****</li> 
+            <li class="list-group-item" style="height: 4rem">Role : {{ suser.role}} </li> 
+          </ul>
+        </div>
+      </div>
+    </div>
+    <br><br>
+    <button type="button" class="btn btn-info" (click)="clickUpdate()" style="color:black;font-weight: bold;font-family: Times New Roman;">Update</button>
   </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item" style="height: 4rem">Employee ID      : ABC1</li>
-    <li class="list-group-item" style="height: 4rem">Name     : Andrew Mackenzi</li>
-    <li class="list-group-item" style="height: 4rem">Date of Birth     : January 29</li>
-    <li class="list-group-item" style="height: 4rem">Email ID      : andrewmackenzi29@gmail.com</li>
-    <li class="list-group-item" style="height: 4rem">Phone No.     : 8695742565</li>
-    <li class="list-group-item" style="height: 4rem">Username      : Andrew</li>
-    <li class="list-group-item" style="height: 4rem">Password      : *****</li>
-  </ul>
-</div>
-</div>
-</div>
-</div>
 
-<div class="col-sm-4">
-  <div class="card" padding>
-      <div class="row no-gutters">
-<div class="card" style="width: 32rem;height: 33rem">
-  <div class="card-header"style="font-weight: bold;font-size: 28px;">
-     Additional Information
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item" style="height: 4rem">Role : Superuser</li>
-    <li class="list-group-item" style="height: 4rem">Hometown      : Sharp Park, Pacifica , CA</li>
-   <li class="list-group-item" style="height: 4rem">Qualification : University of Oxford, Master of Business Administration (MBA) degree</li>
-   <li class="list-group-item" style="height: 4rem">Time Period : October 2010 - Present</li>
-    <li class="list-group-item" style="height: 4rem">Gender : Male</li>
-    <li class="list-group-item" style="height: 4rem">Blood Group : O+ve</li>
-    
-    <li class="list-group-item" style="height: 4rem">Interests : Travel, Housing</li>
+<div class="col-md-1"></div>
 
-
-
-  </ul>
-</div>
-
-
-</div>
-</div>
-</div>
 
 </div>
 

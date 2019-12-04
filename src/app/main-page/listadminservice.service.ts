@@ -10,7 +10,7 @@ export class ListadminserviceService {
   constructor(private http:HttpClient) { }
 
   getAdminDetails() {
-  	return this.http.get('http://localhost:8082/employee');
+  	return this.http.get('http://localhost:8083/employee');
   }
   
 }

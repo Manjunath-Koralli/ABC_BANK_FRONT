@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { SuperuserserviceService } from './superuserservice.service';
+
 
 @Component({
   selector: 'app-profile',
@@ -8,12 +10,32 @@ import { Router } from '@angular/router';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor(private router: Router ) { }
+	getData:any[];
 
-  ngOnInit() {
+  	constructor(private router: Router, private _httpService: SuperuserserviceService ) { }
+
+	ngOnInit() {
+		this._httpService.getSuperUserDetails()
+      		.subscribe((res: any[]) => {
+        		console.log(res);
+        		this.getData = res;
+      	});
+  	}
+
+	clickUpdate() {
+    this.router.navigate(['profile/update']);
   }
 
-home1(){
-	this.router.navigate(['main-page']);
-}
+	home1(){
+
+		this.router.navigate(['main-page']);
+	}
+
+	/*onTestGet() {
+    this._httpService.getUserDetails()
+      .subscribe((res: any[]) => {
+        console.log(res);
+        this.getData = res;
+      });
+  	}*/
 }

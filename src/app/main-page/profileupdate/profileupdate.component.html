@@ -1,0 +1,67 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+	<i><h2 style="color:white;padding-left: 500px">Update form</h2></i>
+</nav>
+<div class="row">
+	<div class="col-md-2">
+	</div>
+	<div class="col-md-8">
+		<div class="container" *ngFor = 'let suser of getData'>
+			<br><br><br>
+  			<form ngForm>
+
+  			<div class="form-group">
+			    <label for="id" style="color:black;font-weight: bold;font-family: Times New Roman;">ID</label>
+			    <input type="text" class="form-control" id="id" required [(ngModel)]="suser.empId" name="id" [readonly]="true">
+  			</div>
+
+			<div class="form-group">
+			    <label for="name"style="color:black;font-weight: bold;font-family: Times New Roman;">Name</label>
+			    <input type="text" class="form-control" id="name" [(ngModel)]="suser.name"
+			           name="name" required>
+			</div>
+
+			<div class="form-group">
+			    <label for="dob" style="color:black;font-weight: bold;font-family: Times New Roman;">Date of Birth</label>
+			    <input type="date"  class="form-control" id="dob"
+			            name="dob" [(ngModel)]="suser.dob"  required>
+			</div>
+
+
+			<div class="form-group">
+			   <label for="phno"style="color:black;font-weight: bold;font-family: Times New Roman;">Contact Number</label>
+			    <input type="number" class="form-control" id="phno"
+			            name="phno" [(ngModel)]="suser.contact"  required>
+			</div>
+
+			<div class="form-group">
+			   <label for="username"style="color:black;font-weight: bold;font-family: Times New Roman;">Username</label>
+			    <input type="text" class="form-control" id="username"
+			           name="username" [(ngModel)]="suser.username"  required>
+			</div>
+
+
+			<div class="form-group">
+			   <label for="password"style="color:black;font-weight: bold;font-family: Times New Roman;">Password</label>
+			    <input type="text" class="form-control" id="password"
+			         name="password" [(ngModel)]="suser.pwd"  required>
+			</div>
+
+			<div class="form-group">
+			   <label for="role" style="color:black;font-weight: bold;font-family: Times New Roman;">Role</label>
+			    <input type="text" class="form-control" id="role" name="role" 
+			    [(ngModel)]="suser.role" [readonly]="true"  required>
+			</div>
+			<br>
+
+			<button type="button" class="btn btn-info" (click)="update()" style="color:black;font-weight: bold;font-family: Times New Roman;">Submit</button>&nbsp;
+
+
+  			</form>
+		</div>
+
+	</div>
+	<div class="col-md-2">
+	</div>
+</div>
+
+

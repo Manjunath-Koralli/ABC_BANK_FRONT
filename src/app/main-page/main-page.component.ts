@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ListadminserviceService } from './listadminservice.service';
+import { AuthService } from '../auth.service';
+
 
 @Component({
   selector: 'app-main-page',
@@ -9,7 +11,7 @@ import { ListadminserviceService } from './listadminservice.service';
 })
 export class MainPageComponent implements OnInit {
 
- constructor(private router: Router, private _httpService : ListadminserviceService ) { }
+ constructor(private router: Router, private _httpService : ListadminserviceService,private authService:AuthService ) { }
 
   ngOnInit() {
   }
@@ -19,7 +21,8 @@ profile1(){
 	this.router.navigate(['profile']);
 
 }
-logout1(){
+logout(){
+	this.authService.logout();
 	this.router.navigate(['login']);
 }
 reg(){

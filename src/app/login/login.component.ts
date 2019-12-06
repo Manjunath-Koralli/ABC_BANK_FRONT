@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Login } from '../login';
+import { AuthService } from '../auth.service';
+import { LoginserviceService } from './loginservice.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -7,28 +11,54 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-model: any = {};
+//model: ILogin = { username: "admin", password: "admin124" };
+  getData :any[];
+  loginForm: FormGroup;
+  message: string;
+  returnUrl: string;
 
-  constructor( private router: Router ) { }
+  constructor(private formBuilder: FormBuilder, private router: Router ,public authService: AuthService, private _httpService : LoginserviceService ) { }
 
   ngOnInit() {
+    this.loginForm = this.formBuilder.group({
+      username: ['', Validators.required],
+      password: ['', Validators.required]
+    });
+    this.returnUrl = '/main-page';
+    this.authService.logout();
   }
-loginUser(){
+  
+  get f() { return this.loginForm.controls; }
 
-   console.log(this.model.name,this.model.password);
-    var user=this.model.name;
-    var password=this.model.password;
-    console.log(user);
-    console.log(password)
-   //let user=this.model.username;
-   //let password=this.model.password;
-   // Service Call ang Auth Data form  // U take form  Service
-   if(user == 'superuser' && password =='superuser'){
-    console.log(this.model.user);
-    console.log(this.model.password);
-     this.router.navigate(['main-page']);
+  loginUser(){
+    this._httpService.getloginDetails()
+      .subscribe((res : any[])=>{
+        console.log(res);
 
-   }
+        this.getData = res;
+        //console.log(this.getData[0].username);
 
-}
+
+        if (this.loginForm.invalid) {
+          return;
+        }
+        else{
+
+          if(this.f.username.value == this.getData[0].username && this.f.password.value == this.getData[0].pwd){
+            console.log("Login successful");
+            //this.authService.authLogin(this.model);
+            localStorage.setItem('isLoggedIn', "true");
+            localStorage.setItem('token', this.f.username.value);
+            this.router.navigate([this.returnUrl]);
+          }
+          else{
+            
+            this.message = "Please check your userid and password";
+          
+          }
+        } 
+    });
+        
+  }
+
 }

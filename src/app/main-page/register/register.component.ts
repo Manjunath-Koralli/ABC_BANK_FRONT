@@ -35,6 +35,7 @@ export class RegisterComponent implements OnInit {
 		this.save();
 		
 		//console.log(this.name);
+		this.router.navigate(['listadmin']);
 
 	}
 

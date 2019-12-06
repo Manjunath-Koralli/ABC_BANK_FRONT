@@ -14,6 +14,6 @@ export class SuperuserserviceService {
   constructor(private http: HttpClient) { }
 
   getSuperUserDetails() {
-  	return this.http.get('http://localhost:8083/superuser');
+  	return this.http.get('http://localhost:8042/Myproject/superuser');
   }
 }

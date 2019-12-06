@@ -8,33 +8,43 @@
 
 
 <br><br><br>
-
-
  <div style="text-align:center"> 
 <img class="img-circle" alt="cannot display" width="150" height="100" src=".\assets\image\login2.jpg" style="height: 80px; width: 80px;">
 </div>
+<p *ngIf="message" class="text-center error">{{message}}</p>
 
- <form ngForm>
+<form [formGroup]="loginForm" (ngSubmit)="loginUser()">
 <div class="form-group row d-flex justify-content-center">
-	<div class="col-xs-2">
-  <label for="name">Name</label>
-  <input type="text" class="form-control" id="name"
-         required
-         [(ngModel)]="model.name" name="name" #name='ngModel'>
-</div></div>
-
-
+  <div class="form-group clearfix" [ngClass]="{ 'has-error': submitted && f.username.errors }">
+    <div class="col-xs-2">
+      <label for="name">Name</label>
+        <input type="text" class="form-control" formControlName="username"/>
+        <div *ngIf="submitted && f.username.errors" class="help-block">
+          <div *ngIf="f.username.errors.required">User name is required</div>
+        </div>
+    </div>
+  </div>
+</div>
 
 <div class="form-group row d-flex justify-content-center">
-	<div class="col-xs-2">
-  <label for="password">Password</label>
-  <input type="password"  class="form-control" id="password"
-         [(ngModel)]="model.password" name="password">
-</div></div>
+<div class="form-group clearfix" [ngClass]="{ 'has-error': submitted && f.password.errors }">
+  
+    <div class="col-xs-2">
+      <label for="password">Password</label>
+      <input type="password"  class="form-control" formControlName="password"/>
+      <div *ngIf="submitted && f.password.errors" class="help-block">
+        <div *ngIf="f.password.errors.required">
+          Password is required
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
 <div class="col-xs-2 text-center" >
-  <button type="submit" class="btn btn-success" (click)=" loginUser()">Login</button>
+  <button type="submit" class="btn btn-success" >Login</button>
 </div>
 </form>
 </div>

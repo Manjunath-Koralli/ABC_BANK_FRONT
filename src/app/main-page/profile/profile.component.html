@@ -12,7 +12,7 @@
   </nav>
 
  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #43C6DB; padding-left:1267px;height: 82px;">
-  <a href="" (click)="home1()"class="btn btn-dark"  style="background: #43C6DB;color:black;font-weight: bold;">Home</a> &nbsp;
+  <button (click)="home1()"class="btn btn-dark"  style="background: #43C6DB;color:black;font-weight: bold;">Home</button> &nbsp;
   <div style="padding-left:20px"></div>
 
   </nav>
@@ -34,7 +34,7 @@
 <div class="col-md-3" *ngFor = 'let suser of getData'>
   
       <div class="row no-gutters" style="padding-left: 50px;background: #e0ffff;">
-        <!--<img src="assets\image\ceo.jpg" class="card-img" alt="..." style="height: 400px;">-->
+        <img src="assets\image\ceo.jpg" class="card-img" alt="..." style="height: 400px;">
         <h5 class="card-title "style="color:black; font-weight: bold; font-size: 28px" >{{ suser.name }}</h5>
       </div>
 </div>

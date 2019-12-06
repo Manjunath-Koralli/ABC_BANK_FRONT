@@ -31,7 +31,7 @@ export class ListadminComponent  implements OnInit {
 
     employee : Employee;
     model =  new Employee('','',0,'','','');
-
+    openform=false;
     columnDefs = [
          
          
@@ -51,7 +51,8 @@ export class ListadminComponent  implements OnInit {
 
     
     ngOnInit() {
-         this.rowData = this.http.get('http://localhost:8083/employee');
+        //this.rowData = this.http.get('http://localhost:8085/employee');
+        this.rowData = this.http.get('http://localhost:8042/Myproject/employee');
     }
 
     onGridReady(params) {
@@ -74,6 +75,7 @@ export class ListadminComponent  implements OnInit {
     }
 
     updateSelected() {
+
         var selectedData = this.gridApi.getSelectedRows();
         
         this.model.empId = selectedData[0].empId;
@@ -84,7 +86,8 @@ export class ListadminComponent  implements OnInit {
         this.model.pwd = selectedData[0].pwd;
 
         this.model.role = selectedData[0].role;
-        return this.model.empId;
+        this.openform=true;
+        return this.openform;
     }
 
     updRow(){
@@ -95,6 +98,7 @@ export class ListadminComponent  implements OnInit {
         //console.log(this.employee);
         //console.log(id);
         this.__httpService.updateEmployee(this.model.empId,this.employee).subscribe(data => console.log(data));
+        this.router.navigate(['main-page']);
            
     }
 

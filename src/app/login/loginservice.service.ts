@@ -5,12 +5,12 @@ import { map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class ListadminserviceService {
+export class LoginserviceService {
 
   constructor(private http:HttpClient) { }
 
-  getAdminDetails() {
-  	return this.http.get('http://localhost:8042/Myproject/employee');
+  getloginDetails() {
+  	//return this.http.get('http://localhost:8085/superuser');
+  	return this.http.get('http://localhost:8042/Myproject/superuser');
   }
-  
 }
